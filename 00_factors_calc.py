@@ -19,6 +19,17 @@ def statement_generator(text, decoration):
 # displays instructions / information
 def instructions ():
 
+    statement_generator("Instructions / Information", "=")
+    print()
+    print("These are the instructions")
+    print()
+    print("Come back to write instructions Jack!")
+    print()
+    print()
+    return ""
+
+    instructions()
+
 
 
 
@@ -34,7 +45,29 @@ def instructions ():
 
 
 # checks input is a number more than a given value
-def num_check(question):
+def num_check(question, low):
+    valid = False
+    while not valid:
+
+        error = "Please enter a integer that is more than (or equal to) {}".format(low)
+
+        try:
+
+            # ask user to enter a number 
+            response = int(input(question))
+
+            # checks number is more than zero
+            if response >= low:
+                return response
+
+            # outputs error if input is invalid
+            else:
+                print(error)
+                print()
+
+        except ValueError:
+            print(error) 
+            print()
 
 
 
@@ -59,7 +92,7 @@ def num_check(question):
 
 
 # gets factors, returns a sorted list
-def get_factors(to_factor):
+#def get_factors(to_factor):
 
 
 
@@ -102,7 +135,6 @@ statement_generator("Factors Calculator", "-")
 
 # Display instructions if user has not used the program before
 first_time = input ("Press <enter> to see the instructions or any key to continue")
-
 if first_time == "":
     instructions()
 
