@@ -32,33 +32,22 @@ def instructions ():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 # checks input is a number more than a given value
-def num_check(question, low):
+def num_check(question):
     valid = False
     while not valid:
 
-        error = "Please enter a integer that is more than (or equal to) {}".format(low)
+        error = "Please enter a integer that is more than (or equal to) 1 and less than (or equal to) 200"
 
         try:
 
             # ask user to enter a number 
             response = int(input(question))
 
-            # checks number is more than zero
-            if response >= low:
+            # checks number is more than, or equal to, one
+            if 1 <= response <= 200 :
                 return response
+            
 
             # outputs error if input is invalid
             else:
@@ -71,58 +60,35 @@ def num_check(question, low):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # gets factors, returns a sorted list
-#def get_factors(to_factor):
+def get_factors(to_factor):
+    # list to hold factors
+    factors_list = []
 
+    # Square root to_factor to find 'half way' 
+    limit = int(to_factor ** 0.5)
 
+    # find factor pairs and add to list
+    for item in range (1, limit + 1):
 
+        #check factor is not 1 (unity)
+        if to_factor == 1:
+            break
 
+        # check if number is a factor
+        result = to_factor % item
+        factor_1 = int(to_factor // item)
 
+        # add factor to list if it is not already in there 
+        if result == 0: 
+            factors_list.append(item)
+        
+        if factor_1 != item and result == 0:
+                factors_list.append (factor_1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # output
+    factors_list.sort()
+    return(factors_list)
 
 
 
