@@ -21,10 +21,19 @@ def instructions ():
 
     statement_generator("Instructions / Information", "=")
     print()
-    print("These are the instructions")
+    print("This program finds all the factors of a given integer that is more than, or equal to 1, and less than, or equal to 200. ")
     print()
-    print("Come back to write instructions Jack!")
+    print("NOTE: Integer must be a whole number!")
     print()
+    print("Enter an integer, and the program will display all of its factors in an ordered list. ")
+    print()
+    print("This program can tell you if your integer is a perfect square, is a prime number, or is UNITY.")
+    print()
+    print("Complete as many calculations as necessary, pressing <enter> at the end of each calculaton or any key to quit.")
+    print()
+    print("Enjoy!")
+    print()
+    print("-" * 50)
     print()
     return ""
 
@@ -117,7 +126,7 @@ while keep_going == "":
         factor_list = get_factors(var_to_factor)
     else:
         factor_list = ""
-        comment = "One is UNITY!  It only has one factor.   Itself ;)"
+        comment = "One is UNITY!  It only has one factor.  Itself ;)"
 
     # comments for squares / primes 
     if len(factor_list) == 2:
@@ -145,4 +154,5 @@ while keep_going == "":
     print()
 
 print()
-print("Thank you for using the factors calculator")
+print("Thank you for using the factors calculator!")
+print()
